@@ -1,0 +1,34 @@
+<html>
+<head> HARSHINE VENKATARAMAN 1001569298
+<img src="https://www.w3schools.com/images/picture.jpg"  style="width:300px">
+
+</head>
+<body>
+
+
+    <form action="{{ url_for('bar') }}" method="post">
+        <input type="submit" value="bar_garph">
+    </form>
+    <form action="{{ url_for('graph') }}" method="post">
+        <input type="submit" value="output_garph">
+    </form>
+   
+    <form action"{{ url_for('pie') }}" method="post">
+        <input type="submit" value="pie chart">
+    
+	</form>
+    
+
+<div>	{%for i in data%}
+        {
+		%for j in c%}
+            
+			Centroid [{{j[0]}},{{j[1]}}]: {{i}}
+       
+	   {%endfor%}
+    
+	 {%endfor%}
+</div>
+
+</body>
+</html>
