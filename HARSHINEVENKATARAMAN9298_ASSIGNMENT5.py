@@ -6,12 +6,7 @@ import pymysql
 from werkzeug.utils import secure_filename
 credentials to connect database
 
-# hostname = 'harshinedb.mysql.database.azure.com'
-# username = 'harshine@harshinedb'
-# password = 'RadheKrishna1'
-# database = 'cloud'
-# myConnection = pymysql.connect(host=hostname, user=username, passwd=password, db=database, autocommit=True,cursorclass=pymysql.cursors.DictCursor, local_infile=True)
-# print "Database Connected"
+
 
 app = Flask(__name__)
 @app.route('/')
