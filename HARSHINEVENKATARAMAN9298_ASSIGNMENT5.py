@@ -11,7 +11,7 @@ credentials to connect database
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('harshine.html')
+    return render_template('file.html')
 
 @app.route('/val', methods=['POST'])
 def val():
@@ -32,7 +32,7 @@ def next():
     c1 = request.form['c1']
     c2 = request.form['c2']
     k = int(request.form['k'])
-    data = pd.read_csv("/C:/Users/harsh/Desktop/harshine/flaskapp/equake.csv")
+    data = pd.read_csv("/C:/Users/<user>/Desktop/harshine/flaskapp/equake.csv")
     x1 = []
     
 	y1 = []
@@ -51,7 +51,7 @@ def next():
 	y_kmeans = kmeans.predict(data1)
     plt.scatter(data1[:,0], data1[:,1], c = y_kmeans)
     plt.scatter(centroids[:, 0],centroids[:, 1], marker = "x", s=150, linewidths = 5, zorder = 10)
-    plt.savefig("/C:/Users/harsh/Desktop/harshine/flaskapp/graph.png")
+    plt.savefig("/C:/Users/<user>/Desktop/harshine/flaskapp/graph.png")
     unique, counts = np.unique(labels, return_counts=True)
     df = pd.DataFrame({"clusters": unique, "count": counts})
     df.to_csv("/C:/Users/harsh/Desktop/harshine/flaskapp/equake.csv", index=False)
@@ -64,7 +64,7 @@ def submit():
     c2 = str(request.form['c2'])
     k = str(request.form['k'])
     df1 = pd.DataFrame({"latitude": c1, "longitude": c2, "depth":k})
-    df1.to_csv("/C:/Users/harsh/Desktop/harshine/flaskapp/equake.csv", index=True)
+    df1.to_csv("/C:/Users/<user>/Desktop/harshine/flaskapp/equake.csv", index=True)
     data12 = enrolled
     return render_template('choice.html', data12 = data12)
 
